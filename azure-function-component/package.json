@@ -1,0 +1,26 @@
+{
+  "name": "azure-function-component",
+  "version": "1.0.0",
+  "description": "A reusable Azure Function component using Pulumi.",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@pulumi/pulumi": "^3.0.0",
+    "@pulumi/azure": "^4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "jest": "^26.0.0",
+    "ts-jest": "^26.0.0",
+    "@types/jest": "^26.0.0"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
+  "author": "",
+  "license": "ISC"
+}
