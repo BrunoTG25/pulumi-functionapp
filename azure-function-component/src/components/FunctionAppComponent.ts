@@ -10,7 +10,7 @@ export interface FunctionAppComponentArgs {
     storageAccountKey: pulumi.Input<string>;
     appServicePlanId?: pulumi.Input<string>;
     appSettings?: pulumi.Input<{ [key: string]: pulumi.Input<string> }>;
-    runtime?: pulumi.Input<string>;
+    runtime?: pulumi.Input<"node" | "dotnet" | "python" | "java">;
     runtimeVersion?: pulumi.Input<string>;
     osType?: pulumi.Input<string>;
 }
