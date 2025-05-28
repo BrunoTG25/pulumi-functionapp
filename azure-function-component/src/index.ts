@@ -1,5 +1,12 @@
 import { FunctionAppComponent } from './components/FunctionAppComponent';
 
+// Example: Make runtime and version dynamic using environment variables or config
+const config = {
+    runtime: process.env.FUNCTION_RUNTIME as "node" | "dotnet" | "python" | "java" || "node",
+    runtimeVersion: process.env.FUNCTION_RUNTIME_VERSION || "18",
+    osType: process.env.FUNCTION_OS_TYPE || "linux"
+};
+
 const functionApp = new FunctionAppComponent({
     name: 'myFunctionApp',
     resourceGroupName: 'myResourceGroup',
@@ -9,9 +16,9 @@ const functionApp = new FunctionAppComponent({
     appSettings: {
         CUSTOM_SETTING: 'value'
     },
-    runtime: 'node',
-    runtimeVersion: '18',
-    osType: 'linux'
+    runtime: config.runtime,
+    runtimeVersion: config.runtimeVersion,
+    osType: config.osType
 });
 
 export const output = functionApp.functionApp.name;
